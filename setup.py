@@ -4,7 +4,7 @@ from typing import List
 def get_requirements(path: str) -> List[str]:
     with open(path, 'r') as file:
         requirements = [req.replace('\n', '') for req in file.readlines()]
-    file.close()
+        
     if '-e .' in requirements:
         requirements.remove('-e .')
     return requirements
